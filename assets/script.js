@@ -4,8 +4,13 @@ const themeToggleButton = document.querySelector('.theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
 const menuToggleButton = document.querySelector('.menu-toggle');
 const menu = document.querySelector('#menu-list');
+const header = document.querySelector('.header');
+const contactForm = document.querySelector('.contact__form');
+const contactFeedback = contactForm?.querySelector('.contact__feedback');
+const faqButtons = document.querySelectorAll('.faq__button');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 const desktopNav = window.matchMedia('(min-width: 768px)');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 const THEME_KEY = 'alpha-studio-theme';
 
@@ -26,6 +31,13 @@ function getStoredTheme() {
 }
 
 setTheme(getStoredTheme());
+
+function applyMotionPreference(mediaQuery) {
+  const shouldReduce = mediaQuery.matches;
+  root.setAttribute('data-motion', shouldReduce ? 'reduced' : 'full');
+}
+
+applyMotionPreference(prefersReducedMotion);
 
 function syncMenuVisibility(mediaQuery) {
   if (!menu || !menuToggleButton) {
@@ -57,6 +69,10 @@ prefersDark.addEventListener('change', (event) => {
 
 desktopNav.addEventListener('change', () => {
   syncMenuVisibility(desktopNav);
+});
+
+prefersReducedMotion.addEventListener('change', (event) => {
+  applyMotionPreference(event);
 });
 
 if (menu && menuToggleButton) {
@@ -154,3 +170,74 @@ previewButtons.forEach((button) => {
 if (previewButtons.length) {
   updatePreview('console');
 }
+
+faqButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    faqButtons.forEach((otherButton) => {
+      if (otherButton !== button) {
+        otherButton.setAttribute('aria-expanded', 'false');
+        const otherPanel = otherButton.closest('.faq__item')?.querySelector('.faq__panel');
+        if (otherPanel) {
+          otherPanel.hidden = true;
+        }
+      }
+    });
+
+    const panel = button.closest('.faq__item')?.querySelector('.faq__panel');
+    button.setAttribute('aria-expanded', String(!expanded));
+    if (panel) {
+      panel.hidden = expanded;
+    }
+  });
+});
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    contactForm.reset();
+
+    if (contactFeedback) {
+      contactFeedback.hidden = false;
+      contactFeedback.focus();
+      window.setTimeout(() => {
+        contactFeedback?.setAttribute('hidden', '');
+      }, 8000);
+    }
+  });
+
+  const formFields = contactForm.querySelectorAll('input, select, textarea');
+  formFields.forEach((field) => {
+    field.addEventListener('input', () => {
+      if (contactFeedback && !contactFeedback.hidden) {
+        contactFeedback.setAttribute('hidden', '');
+      }
+    });
+  });
+}
+
+function updateHeaderState() {
+  if (!header) {
+    return;
+  }
+  const shouldCondense = window.scrollY > 16;
+  header.classList.toggle('header--scrolled', shouldCondense);
+}
+
+updateHeaderState();
+
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateHeaderState();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});

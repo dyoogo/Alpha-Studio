@@ -24,6 +24,12 @@
   --glow-strong: 0 0 35px rgba(61, 251, 255, 0.3);
   --glow-intense: 0 0 60px rgba(139, 92, 246, 0.45);
   --border: 1px solid rgba(255, 255, 255, 0.08);
+  --layer-backdrop: -4;
+  --layer-global-overlay: -3;
+  --layer-section-background: -2;
+  --layer-section: 0;
+  --layer-surface: 1;
+  --layer-floating: 40;
 }
 
 html[data-theme="light"] {
@@ -79,7 +85,7 @@ body::before {
     var(--color-gradient);
   background-size: 420px 420px, 520px 520px, 600px 600px, 100% 100%;
   filter: saturate(120%);
-  z-index: -4;
+  z-index: var(--layer-backdrop);
   pointer-events: none;
   animation: backgroundDrift 48s linear infinite;
 }
@@ -98,10 +104,19 @@ body::after {
       transparent 18px
     );
   mix-blend-mode: screen;
-  z-index: -3;
+  z-index: var(--layer-global-overlay);
   pointer-events: none;
   opacity: 0.55;
   animation: scanlines 24s linear infinite;
+}
+
+html[data-theme="light"] body::before {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(79, 70, 229, 0.22), transparent 55%),
+    radial-gradient(circle at 86% 20%, rgba(14, 165, 233, 0.18), transparent 60%),
+    radial-gradient(circle at 40% 78%, rgba(236, 72, 153, 0.18), transparent 60%),
+    var(--color-gradient);
+  filter: saturate(105%);
 }
 
 html[data-theme="light"] body::after {
@@ -164,7 +179,7 @@ img {
 .header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: var(--layer-floating);
   backdrop-filter: blur(22px);
   background: linear-gradient(180deg, rgba(7, 11, 24, 0.85), rgba(7, 11, 24, 0.55));
   border-bottom: var(--border);
@@ -367,6 +382,7 @@ html[data-theme="light"] .btn--outline {
   padding: 7rem 0 4.5rem;
   overflow: hidden;
   isolation: isolate;
+  z-index: var(--layer-section);
 }
 
 .hero__background {
@@ -375,7 +391,7 @@ html[data-theme="light"] .btn--outline {
   background: radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.38), transparent 55%),
     radial-gradient(circle at 70% 10%, rgba(34, 211, 238, 0.25), transparent 60%);
   filter: blur(0px);
-  z-index: -1;
+  z-index: var(--layer-section-background);
   opacity: 0.95;
   animation: heroAurora 18s ease-in-out infinite alternate;
   overflow: hidden;
@@ -530,6 +546,7 @@ html[data-theme="light"] .section h2 {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
+  z-index: var(--layer-surface);
 }
 
 .hero__grid {
@@ -661,6 +678,7 @@ html[data-theme="light"] .section h2 {
   box-shadow: var(--shadow-hard), 0 0 45px -20px rgba(61, 251, 255, 0.6);
   background: linear-gradient(145deg, rgba(15, 23, 42, 0.85), rgba(34, 211, 238, 0.18));
   padding: 1.1rem;
+  z-index: var(--layer-surface);
 }
 
 .hero__media img {
@@ -700,6 +718,8 @@ html[data-theme="light"] .section h2 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.5rem;
   align-items: center;
+  position: relative;
+  z-index: var(--layer-surface);
 }
 
 .hero__stat {
@@ -769,7 +789,8 @@ html[data-theme="light"] .section h2 {
 .section {
   padding: clamp(4rem, 7vw, 5.5rem) 0;
   position: relative;
-  z-index: 1;
+  z-index: var(--layer-section);
+  isolation: isolate;
 }
 
 .section:not(.section--marquee)::before {
@@ -780,7 +801,7 @@ html[data-theme="light"] .section h2 {
   background: linear-gradient(120deg, rgba(61, 251, 255, 0.08), rgba(244, 114, 182, 0.05));
   opacity: 0.35;
   mix-blend-mode: screen;
-  z-index: -1;
+  z-index: var(--layer-section-background);
   pointer-events: none;
 }
 
@@ -1046,6 +1067,7 @@ html[data-theme="light"] .marquee {
   opacity: 0.45;
   transform: rotate(5deg);
   transition: transform var(--transition-slow), opacity var(--transition-fast);
+  z-index: var(--layer-section-background);
   pointer-events: none;
 }
 
@@ -1179,7 +1201,7 @@ html[data-theme="light"] .marquee {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.6), rgba(34, 211, 238, 0.45));
   filter: blur(80px);
   opacity: 0.6;
-  z-index: -1;
+  z-index: var(--layer-section-background);
 }
 
 .about__content {
@@ -1324,7 +1346,7 @@ html[data-theme="light"] .marquee {
   filter: blur(70px);
   opacity: 0.9;
   transition: transform var(--transition-fast), opacity var(--transition-fast);
-  z-index: -1;
+  z-index: var(--layer-section-background);
 }
 
 html[data-theme="light"] .info-card::after {
@@ -1361,7 +1383,7 @@ html[data-theme="light"] .info-card::after {
 
 .info-card > * {
   position: relative;
-  z-index: 1;
+  z-index: var(--layer-surface);
 }
 
 .info-card__link {

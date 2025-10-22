@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Detalhes do Battle Alpha, MOBA futurista desenvolvido pelo Alpha Studio com Unity HDRP e telemetria avançada."
+    />
+    <title>Battle Alpha · Alpha Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <header class="header" id="topo">
+      <div class="container header__inner">
+        <div class="logo" aria-label="Alpha Studio">Alpha Studio</div>
+        <nav class="navigation" aria-label="Navegação principal">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list" aria-label="Abrir menu">
+            ☰
+          </button>
+          <ul id="menu-list" class="menu" aria-hidden="true">
+            <li><a href="../index.html#topo">Início</a></li>
+            <li><a href="../index.html#preview">Preview</a></li>
+            <li><a href="../index.html#servicos">Serviços</a></li>
+            <li><a href="../projects.html" aria-current="page">Projetos</a></li>
+            <li><a href="../about.html">Sobre</a></li>
+            <li><a href="../contact.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" type="button" aria-pressed="true" aria-label="Alternar tema">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <a class="btn btn--outline" href="../contact.html">Agendar call</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Você está aqui">
+          <a href="../index.html#topo">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../projects.html">Projetos</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Battle Alpha</span>
+        </nav>
+      </div>
+
+      <section class="project-hero" aria-labelledby="battle-alpha-title">
+        <div class="container project-hero__grid">
+          <div class="project-hero__details">
+            <h1 class="page-hero__title" id="battle-alpha-title">Battle Alpha</h1>
+            <p class="project-hero__summary">
+              Um MOBA futurista com combate 5v5, arenas dinâmicas e pipeline competitivo para esports. Combinamos Unity
+              HDRP, netcode proprietário e telemetria para balancear habilidades em tempo real e manter matchmaking justo
+              em escala global.
+            </p>
+            <div class="project-meta">
+              <div class="project-meta__item">
+                <span class="project-meta__label">Plataformas</span>
+                <span class="project-meta__value">PlayStation · Xbox · PC</span>
+              </div>
+              <div class="project-meta__item">
+                <span class="project-meta__label">Stack</span>
+                <span class="project-meta__value">Unity HDRP · Netcode · PlayFab · Azure PlayStream</span>
+              </div>
+              <div class="project-meta__item">
+                <span class="project-meta__label">Resultados</span>
+                <span class="project-meta__value">+6M de jogadores no primeiro ano e retenção D30 de 28%</span>
+              </div>
+            </div>
+            <div class="project-cta">
+              <a class="btn btn--primary" href="../contact.html">Solicitar diagnóstico</a>
+              <a class="btn btn--ghost" href="../projects.html">Voltar para projetos</a>
+            </div>
+          </div>
+          <figure class="page-hero__media">
+            <img src="../assets/Battle Alpha.d713c8c9.jpg" alt="Arena futurista do jogo Battle Alpha" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section project-section--preview" aria-labelledby="battle-alpha-preview">
+        <div class="container">
+          <div class="project-section__header">
+            <h2 class="page-section__title" id="battle-alpha-preview">Preview cinemático</h2>
+            <p>Explore frames da produção para entender como conduzimos direção de arte, UI competitiva e efeitos de rede.</p>
+          </div>
+          <div class="project-preview" data-preview-group="battle-alpha">
+            <figure class="project-preview__stage">
+              <img
+                src="../assets/battle-alpha-preview-1.svg"
+                alt="Arte conceitual neon do Battle Alpha"
+                data-preview-stage
+              />
+              <figcaption data-preview-caption>Concept principal com arenas neon e composição simétrica.</figcaption>
+            </figure>
+            <div class="project-preview__thumbnails" role="list">
+              <button
+                type="button"
+                class="project-preview__thumb is-active"
+                data-preview-item
+                data-preview-image="../assets/battle-alpha-preview-1.svg"
+                data-preview-alt="Arte conceitual neon do Battle Alpha"
+                data-preview-caption="Concept principal com arenas neon e composição simétrica."
+              >
+                <img src="../assets/battle-alpha-preview-1.svg" alt="Miniatura da arena neon do Battle Alpha" />
+              </button>
+              <button
+                type="button"
+                class="project-preview__thumb"
+                data-preview-item
+                data-preview-image="../assets/battle-alpha-preview-2.svg"
+                data-preview-alt="Interface do sistema de habilidades do Battle Alpha"
+                data-preview-caption="Interface de habilidades sincronizada com telemetria de desempenho."
+              >
+                <img src="../assets/battle-alpha-preview-2.svg" alt="Miniatura do sistema de habilidades do Battle Alpha" />
+              </button>
+              <button
+                type="button"
+                class="project-preview__thumb"
+                data-preview-item
+                data-preview-image="../assets/battle-alpha-preview-3.svg"
+                data-preview-alt="HUD competitivo e gráficos do Battle Alpha"
+                data-preview-caption="HUD competitivo com métricas em tempo real para casters e jogadores."
+              >
+                <img src="../assets/battle-alpha-preview-3.svg" alt="Miniatura do HUD competitivo do Battle Alpha" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="battle-alpha-insights">
+        <div class="container project-hero__grid">
+          <div class="project-highlight">
+            <h2 class="page-section__title" id="battle-alpha-insights">Destaques do projeto</h2>
+            <ul class="project-page__list">
+              <li><strong>Matchmaking híbrido:</strong> algoritmos que combinam MMR e estilo de jogo para partidas mais equilibradas.</li>
+              <li><strong>Pipeline de assets automatizado:</strong> integrações com Houdini e Substance para atualizações semanais.</li>
+              <li><strong>Live-ops competitivo:</strong> temporadas com torneios licenciados e recompensas exclusivas com parceiros.</li>
+            </ul>
+          </div>
+          <div class="project-highlight">
+            <h3 class="page-section__title">Métricas monitoradas</h3>
+            <ul class="project-page__list">
+              <li><strong>Tempo de fila:</strong> redução de 38% com telemetria aplicada a regiões com menor player base.</li>
+              <li><strong>Performance:</strong> otimizações de shader e LOD garantem 60 FPS estáveis em consoles.</li>
+              <li><strong>Engajamento:</strong> eventos temáticos triplicaram receita média por usuário durante feriados.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="battle-alpha-galeria">
+        <div class="container">
+          <h2 class="page-section__title" id="battle-alpha-galeria">Galeria</h2>
+          <div class="project-gallery">
+            <img src="../assets/Battle Alpha.d713c8c9.jpg" alt="Equipe se enfrentando em arena neon no Battle Alpha" />
+            <img src="../assets/imghalloween.08c913db.png" alt="Evento sazonal neon inspirado em Battle Alpha" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <div>
+          <p class="logo">Alpha Studio</p>
+          <p>Jogos em Unity, sistemas inteligentes e experiências digitais sob medida.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="mailto:contato@alphastudio.gg">contato@alphastudio.gg</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <p class="footer__copy">© <span id="current-year"></span> Alpha Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../assets/script.js" type="module"></script>
+  </body>
+</html>

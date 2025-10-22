@@ -1,28 +1,401 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Alpha Studio - Criação de jogos para Unity, experiências interativas e soluções digitais personalizadas."
+    />
+    <title>Alpha Studio | Experiências que inspiram</title>
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAAAGAAAABgAPBrQs8AAAAHdElNRQfnCQMABw3pwKZ/AAADXUlEQVRIx8WUa0yTZxTH/6ctTaA1WHBsIZp9EEnVrdG5C9PJsnlLjFR9YzuazF4kDslW2SKRjc3bjNhYFTGagCGtmGXGVmESGSpNyk0uBl3i3EYcCYNG0DiUsSJdHe/Zl0ET3zSvmzGej89znvP/nfM/eYDnHPSkiSZTVsjnS0zUqhK2hB9lZ+NncRzz5syZKnSY31Ok37r1Z4VoT2pubfX7O2eZzePj/xvAZDKZfD6lUvPF0NBYaVERpQJAcTF2AyjU6eJWfBdf46fhYZTwL/ypyxVekt6kbS8r8/v9frN5YuLxdIVEeMM8n++MWq2xD3405j1/XrGL9TikVlOvuIou5ebKjqoZOzE/NRWr6DQ1ut2ao0MFY86amsm6sgDa9pQPw0vcbjpKtShauZKjCi1H6+v5d4Weh/Lz/7PHJdgJl9GoTdD9+LDL5YoLkHcoK1T1WUYGN2IGrTCZWEnfYnzbNqRzN925dg0XUY4fBEFWMRdr8f3o6OPH7KZa1DidthcW7z15d/ZsCQA3Kfco11gs9AF240JyMurEeircvv2JW81AA1UcO8YZ4nJ0WyySSezAdN6lUikCih7kxqyMAWQiG+8vWoQ3cAotSUm0mYr5q5kzZYVzsBn2ykrvl23TbJ1bt5JF2cKnExJ4EzpRdeOGZBLD/CrzwoXSHQhSJb2i0cgKfoODtK+3V/RMbIR97lyv0Gazo6AAAIiYvVdbCx1v1dVRH+ohSJeODOTB2zGdGEA+yvnm7dtxhVfjEzRGo9QlnqADVms1deQ7qKdnUngyzfHm0nJvl9GIIPYiRa+X1LkLA4TBQSnAVfqYqwIByQM1X0DW9euUIv5KZTk5ntfaPTahoyMeJ0VFLXUsWxa3kYdI5S0xnSmA8Oijs9rkc+dQDB18AwPQ4Df8HYnwETJgQUMDlaoMpLl3T84h8RJdRmk0KrlohRn2/n7xdWUFddfWSgCmvs5E3OebeXn8OabTPpWKWuCE0emk47BSeGREdkfC7IU2FJJYt573KEocjmpqJgdFIlIL/g3vy21XNoUCAZSyn4sEASepideZzVX6lj+sL/X1yQLo8B0eRCJ4kYP4a2SE1lMnpQiCx31l2LY/GJR9/7RhXfdOdXVNZubGtMWGU3fS0p654NPGP8cmUoGG4lk8AAAAAElFTkSuQmCC" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="header" id="topo">
+      <div class="container header__inner">
+        <div class="logo" aria-label="Alpha Studio">Alpha Studio</div>
+        <nav class="navigation" aria-label="Navegação principal">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list" aria-label="Abrir menu">
+            ☰
+          </button>
+          <ul id="menu-list" class="menu" aria-hidden="true">
+            <li><a href="index.html#topo">Início</a></li>
+            <li><a href="index.html#preview">Preview</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="projects.html">Projetos</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="contact.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" type="button" aria-pressed="true" aria-label="Alternar tema">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <a class="btn btn--outline" href="contact.html">Agendar call</a>
+        </div>
+      </div>
+    </header>
 
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__background" aria-hidden="true"></div>
+        <div class="container hero__content">
+          <div class="hero__grid">
+            <div class="hero__text">
+              <span class="hero__badge">Diogo Moura · CEO &amp; Creative Director</span>
+              <p class="hero__eyebrow">Estúdio de jogos e plataformas inteligentes</p>
+              <h1 id="hero-title">Criamos universos que brilham em cada tela</h1>
+              <p class="hero__description">
+                De jogos AAA em Unity a sistemas conectados, transformamos ideias em mundos interativos com design
+                cinematográfico, tecnologia proprietária e experiências escaláveis para console, mobile e cloud.
+              </p>
+              <ul class="hero__highlights">
+                <li><span>Entrega turbo</span> com squads híbridas e pipeline em nuvem.</li>
+                <li><span>Live-ops inteligente</span> com IA para balanceamento e economia.</li>
+                <li><span>Experiências memoráveis</span> guiadas por narrativa e data insights.</li>
+              </ul>
+              <div class="hero__actions">
+                <a class="btn btn--primary" href="contact.html">Lançar próximo projeto</a>
+                <a class="btn btn--ghost" href="#preview">Assistir preview</a>
+              </div>
+            </div>
+            <figure class="hero__media">
+              <img src="./assets/alphagamer.d90accaf.jpeg" alt="Equipe desenvolvendo um jogo em Unity" />
+              <figcaption>Operação criativa liderada por Diogo Moura para experiências globais.</figcaption>
+            </figure>
+          </div>
+          <div class="hero__footer">
+            <div class="hero__stat">
+              <span class="hero__stat-value">+120M</span>
+              <span class="hero__stat-label">Sessões jogadas</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value">98%</span>
+              <span class="hero__stat-label">Satisfação dos parceiros</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value">10x</span>
+              <span class="hero__stat-label">ROI médio em lançamentos</span>
+            </div>
+            <div class="hero__scroll" aria-hidden="true">Role para descobrir</div>
+          </div>
+        </div>
+      </section>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Transformando sonhos em realidade, pixel por pixel.">
-  <title>Alpha Studio</title>
+      <section class="section section--marquee" aria-label="Clientes e parceiros">
+        <div class="marquee">
+          <div class="marquee__track">
+            <span>Unity Pro Partner</span>
+            <span>Cloud Gaming Ready</span>
+            <span>Live-Ops Experts</span>
+            <span>IA Driven Design</span>
+            <span>XR Imersivo</span>
+            <span>Esports Infrastructure</span>
+            <span>Unity Pro Partner</span>
+            <span>Cloud Gaming Ready</span>
+            <span>Live-Ops Experts</span>
+            <span>IA Driven Design</span>
+            <span>XR Imersivo</span>
+            <span>Esports Infrastructure</span>
+          </div>
+        </div>
+      </section>
 
-  
-  <script type="module" crossorigin src="./assets/index.22f6cea5.js"></script>
-  <link rel="stylesheet" href="./assets/index.79d73cd5.css">
-</head>
+      <section class="section section--preview" id="preview" aria-labelledby="preview-title">
+        <div class="container preview">
+          <div class="preview__content">
+            <p class="section__eyebrow">Prévia interativa</p>
+            <h2 id="preview-title">Veja o universo que podemos criar</h2>
+            <p>
+              Explore trechos de builds reais e veja como iteramos assets, UX e telemetria para alcançar metas de
+              retenção e monetização em qualquer plataforma.
+            </p>
+            <div class="preview__controls" role="tablist" aria-label="Pré-visualizações de plataforma">
+              <button
+                class="preview__button is-active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="preview-panel"
+                id="preview-tab-console"
+                data-preview-target="console"
+              >
+                Console
+              </button>
+              <button
+                class="preview__button"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="preview-panel"
+                id="preview-tab-mobile"
+                data-preview-target="mobile"
+              >
+                Mobile
+              </button>
+              <button
+                class="preview__button"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="preview-panel"
+                id="preview-tab-desktop"
+                data-preview-target="desktop"
+              >
+                Desktop
+              </button>
+            </div>
+            <dl class="preview__details">
+              <div>
+                <dt class="preview__label">Projeto</dt>
+                <dd data-preview-title>Battle Alpha</dd>
+              </div>
+              <div>
+                <dt class="preview__label">Destaque</dt>
+                <dd data-preview-highlight>Matchmaking global em tempo real com telemetria avançada.</dd>
+              </div>
+              <div>
+                <dt class="preview__label">Stack</dt>
+                <dd data-preview-stack>Unity DOTS · Netcode · PlayFab · Azure PlayStream</dd>
+              </div>
+            </dl>
+          </div>
+          <figure class="preview__visual" id="preview-panel" role="tabpanel" aria-labelledby="preview-tab-console">
+            <div class="preview__device" aria-live="polite">
+              <img
+                src="./assets/Battle Alpha.d713c8c9.jpg"
+                alt="Visual do jogo Battle Alpha em uma arena futurista"
+                data-preview-image
+              />
+            </div>
+            <figcaption data-preview-description>
+              Combates 5v5 com efeitos visuais de partículas e HUD adaptável para e-sports.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
-<body class="font-poppins bg-black">
-  <div id="root"></div>
-</body>
+      <section class="section" id="servicos" aria-labelledby="servicos-title">
+        <div class="container">
+          <div class="section__header">
+            <h2 id="servicos-title">Soluções sob medida para cada universo</h2>
+            <p class="section__subtitle">
+              Com squads lideradas por Diogo Moura, unimos design, engenharia e dados para entregar experiências
+              impactantes do conceito ao live-ops.
+            </p>
+          </div>
+          <div class="grid grid--showcase">
+            <article class="showcase-card">
+              <div class="showcase-card__icon" aria-hidden="true">🎮</div>
+              <h3>Jogos Unity de alta performance</h3>
+              <p>
+                Desenvolvimento full-cycle, art pipeline integrado e otimização multiplataforma com suporte a crossplay
+                e ecosistemas de esports.
+              </p>
+              <ul>
+                <li>Gameplay tuning com telemetria proprietária</li>
+                <li>Builds automatizadas e QA contínuo</li>
+                <li>Live-ops, season passes e economia dinâmica</li>
+              </ul>
+            </article>
+            <article class="showcase-card">
+              <div class="showcase-card__icon" aria-hidden="true">🧠</div>
+              <h3>Simuladores imersivos e XR</h3>
+              <p>
+                Realidade virtual e aumentada para treinamento, saúde e entretenimento com interfaces intuitivas e
+                feedback háptico.
+              </p>
+              <ul>
+                <li>Integração com hardware dedicado e IoT</li>
+                <li>Renderização realista e pipelines PBR</li>
+                <li>Relatórios e dashboards em tempo real</li>
+              </ul>
+            </article>
+            <article class="showcase-card">
+              <div class="showcase-card__icon" aria-hidden="true">⚙️</div>
+              <h3>Sistemas e plataformas conectadas</h3>
+              <p>
+                Portais, back-offices e ferramentas personalizadas com micro serviços, autenticação segura e analytics
+                completo.
+              </p>
+              <ul>
+                <li>Integrações com APIs externas e SDKs</li>
+                <li>Arquitetura escalável em nuvem</li>
+                <li>Suporte contínuo 24/7 com SLO garantido</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
 
+      <section class="section section--accent" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="container">
+          <h2 id="portfolio-title">Portfólio selecionado</h2>
+          <p class="section__subtitle">Tecnologia que inspira imaginação, entrega resultados e encanta o público.</p>
+          <div class="grid grid--portfolio">
+            <a class="portfolio-card" href="projects/battle-alpha.html">
+              <img src="./assets/Battle Alpha.d713c8c9.jpg" alt="Screenshot do jogo Battle Alpha" />
+              <div class="portfolio-card__content">
+                <h3>Battle Alpha</h3>
+                <p>MOBA futurista com física avançada, matchmaking global e analytics em tempo real.</p>
+              </div>
+            </a>
+            <a class="portfolio-card" href="projects/project-secret.html">
+              <img src="./assets/PRojectSecret.38ba3f53.png" alt="Screenshot do projeto secreto" />
+              <div class="portfolio-card__content">
+                <h3>Project Secret</h3>
+                <p>Experiência narrativa episódica com sistema de decisões ramificadas e IA generativa.</p>
+              </div>
+            </a>
+            <a class="portfolio-card" href="projects/nightmare.html">
+              <img src="./assets/imgNightmare.a65da0d6.jpg" alt="Cena do jogo Nightmare" />
+              <div class="portfolio-card__content">
+                <h3>Nightmare</h3>
+                <p>Survival horror multiplayer com áudio espacial e ferramentas de streaming embutidas.</p>
+              </div>
+            </a>
+            <a class="portfolio-card" href="projects.html#eventos">
+              <img src="./assets/imghalloween.08c913db.png" alt="Evento de Halloween" />
+              <div class="portfolio-card__content">
+                <h3>Eventos sazonais</h3>
+                <p>Eventos temáticos com sistemas de live-ops, economia virtual e conteúdo por temporada.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
 
+      <section class="section" id="sobre" aria-labelledby="sobre-title">
+        <div class="container about">
+          <div class="about__media" aria-hidden="true">
+            <div class="about__glow"></div>
+            <img src="./assets/PRojectSecret.38ba3f53.png" alt="Equipe em sessão de revisão criativa" />
+          </div>
+          <div class="about__content">
+            <p class="section__eyebrow">Liderança visionária</p>
+            <h2 id="sobre-title">Diogo Moura define a próxima geração de experiências</h2>
+            <p>
+              Com mais de uma década dirigindo projetos interativos, Diogo Moura lidera o Alpha Studio com foco em
+              inovação contínua, produção colaborativa e narrativas que geram fãs. Seu olhar une estratégia de negócio
+              e criatividade técnica para entregar produtos que se destacam globalmente.
+            </p>
+            <div class="about__grid">
+              <div>
+                <h3>Mentoria hands-on</h3>
+                <p>Direção criativa com sessões semanais e validação rápida com stakeholders chave.</p>
+              </div>
+              <div>
+                <h3>Framework proprietário</h3>
+                <p>Sistema Alpha Pulse para telemetria, balanceamento e automação de campanhas live-ops.</p>
+              </div>
+              <div>
+                <h3>Rede global</h3>
+                <p>Parcerias estratégicas com publishers, streamers e fabricantes de hardware.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="section" id="processo" aria-labelledby="processo-title">
+        <div class="container">
+          <h2 id="processo-title">Nosso processo colaborativo</h2>
+          <div class="timeline">
+            <article class="timeline__item">
+              <span class="timeline__step">1</span>
+              <div>
+                <h3>Descoberta</h3>
+                <p>Imersão nas necessidades do projeto, definição de metas e arquitetura da solução.</p>
+              </div>
+            </article>
+            <article class="timeline__item">
+              <span class="timeline__step">2</span>
+              <div>
+                <h3>Prototipação</h3>
+                <p>Concepção visual e técnica, validação com stakeholders e planejamento iterativo.</p>
+              </div>
+            </article>
+            <article class="timeline__item">
+              <span class="timeline__step">3</span>
+              <div>
+                <h3>Produção</h3>
+                <p>Desenvolvimento ágil com QA contínuo, telemetria e otimizações de performance.</p>
+              </div>
+            </article>
+            <article class="timeline__item">
+              <span class="timeline__step">4</span>
+              <div>
+                <h3>Lançamento e suporte</h3>
+                <p>Deploy escalável, análise de métricas, atualizações sazonais e suporte dedicado.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--cta" aria-labelledby="cta-title">
+        <div class="container cta">
+          <div>
+            <h2 id="cta-title">Pronto para criar algo extraordinário?</h2>
+            <p>
+              Vamos discutir o seu projeto e construir juntos um roadmap que combine criatividade, tecnologia e
+              resultados.
+            </p>
+          </div>
+          <a class="btn btn--light" href="contact.html">Falar com Diogo Moura</a>
+        </div>
+      </section>
+
+      <section class="section" id="contato" aria-labelledby="contato-title">
+        <div class="container contact contact--summary">
+          <div>
+            <h2 id="contato-title">Vamos conversar</h2>
+            <p>
+              Conte um pouco sobre a sua ideia e entraremos em contato para montar uma proposta personalizada em até
+              48 horas úteis.
+            </p>
+            <ul class="contact__info">
+              <li><strong>Email:</strong> contato@alphastudio.gg</li>
+              <li><strong>Telefone:</strong> +55 11 99999-9999</li>
+              <li><strong>Endereço:</strong> São Paulo · Atendimento global remoto</li>
+            </ul>
+            <a class="btn btn--primary" href="contact.html">Ir para a página de contato</a>
+          </div>
+          <div class="contact__card">
+            <h3>Projetos em destaque</h3>
+            <p>
+              Descubra como combinamos arte, engenharia e dados para lançar experiências marcantes em diferentes
+              plataformas.
+            </p>
+            <a class="btn btn--ghost" href="projects.html">Explorar projetos</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <div>
+          <p class="logo">Alpha Studio</p>
+          <p>Jogos em Unity, sistemas inteligentes e experiências digitais sob medida.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="mailto:contato@alphastudio.gg">contato@alphastudio.gg</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <p class="footer__copy">© <span id="current-year"></span> Alpha Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./assets/script.js" type="module"></script>
+  </body>
 </html>

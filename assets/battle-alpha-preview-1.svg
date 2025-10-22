@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad-battle-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <radialGradient id="glow-battle-1" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad-battle-1)" />
+  <circle cx="300" cy="320" r="240" fill="url(#glow-battle-1)" />
+  <circle cx="930" cy="300" r="220" fill="#38bdf8" fill-opacity="0.35" />
+  <g fill="#0ea5e9" fill-opacity="0.4">
+    <path d="M210 150h70l120 180-120 180h-70l120-180z" />
+    <path d="M990 510h-70L800 330l120-180h70L870 330z" />
+  </g>
+  <g fill="none" stroke="#bae6fd" stroke-width="3" stroke-opacity="0.45">
+    <path d="M160 120l200 217-200 217" />
+    <path d="M1040 120L840 337l200 217" />
+    <circle cx="600" cy="337" r="128" />
+  </g>
+  <text x="600" y="320" text-anchor="middle" font-size="88" font-family="'Poppins', 'Segoe UI', sans-serif" fill="#f8fafc" font-weight="700">Battle Alpha</text>
+  <text x="600" y="395" text-anchor="middle" font-size="32" font-family="'Poppins', 'Segoe UI', sans-serif" fill="#bae6fd" font-weight="500">Arena Neon · Core Gameplay</text>
+</svg>

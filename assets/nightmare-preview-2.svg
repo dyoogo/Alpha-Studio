@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad-night-2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#0b1120" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad-night-2)" />
+  <g fill="#fb923c" opacity="0.25">
+    <circle cx="280" cy="220" r="160" />
+    <circle cx="880" cy="380" r="200" />
+  </g>
+  <g fill="none" stroke="#f97316" stroke-width="3" stroke-dasharray="14 18" opacity="0.7">
+    <path d="M200 520c90-140 220-140 320-60s260 60 360-60 220-80 320 40" />
+  </g>
+  <g fill="#fcd34d" font-family="'Poppins', 'Segoe UI', sans-serif" text-anchor="middle">
+    <text x="600" y="320" font-size="64" font-weight="600">Eventos climáticos</text>
+    <text x="600" y="380" font-size="28" font-weight="400">Neblina dinâmica e alertas cooperativos</text>
+  </g>
+</svg>

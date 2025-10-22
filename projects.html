@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conheça os jogos e plataformas desenvolvidos pelo Alpha Studio com tecnologia Unity e soluções digitais."
+    />
+    <title>Projetos · Alpha Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="header" id="topo">
+      <div class="container header__inner">
+        <div class="logo" aria-label="Alpha Studio">Alpha Studio</div>
+        <nav class="navigation" aria-label="Navegação principal">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list" aria-label="Abrir menu">
+            ☰
+          </button>
+          <ul id="menu-list" class="menu" aria-hidden="true">
+            <li><a href="index.html#topo">Início</a></li>
+            <li><a href="index.html#preview">Preview</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="projects.html" aria-current="page">Projetos</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="contact.html">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" type="button" aria-pressed="true" aria-label="Alternar tema">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <a class="btn btn--outline" href="contact.html">Agendar call</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-hero" aria-labelledby="projetos-title">
+        <div class="container page-hero__content">
+          <div class="page-hero__text">
+            <p class="page-hero__eyebrow">Portfólio Alpha Studio</p>
+            <h1 class="page-hero__title" id="projetos-title">Experiências que elevam cada plataforma</h1>
+            <p class="page-hero__lead">
+              Selecionamos cases que demonstram nossa combinação de tecnologia Unity, IA aplicada e design centrado no
+              jogador. Explore cada projeto para mergulhar nos bastidores e métricas alcançadas.
+            </p>
+            <ul class="page-hero__meta">
+              <li><strong>Live-ops contínuo</strong> com eventos sazonais e atualizações em cloud.</li>
+              <li><strong>Integrações completas</strong> com PlayFab, AWS, Azure, Firebase e OpenAI.</li>
+              <li><strong>Times multidisciplinares</strong> conectados por pipelines de automação e QA contínuo.</li>
+            </ul>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="contact.html">Vamos conversar</a>
+              <a class="btn btn--ghost" href="about.html">Conhecer liderança</a>
+            </div>
+          </div>
+          <figure class="page-hero__media">
+            <img src="./assets/Battle Alpha.d713c8c9.jpg" alt="Montagem dos principais jogos do Alpha Studio" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="page-section page-section--alt" aria-labelledby="projects-preview-title">
+        <div class="container">
+          <div class="page-section__header">
+            <h2 class="page-section__title" id="projects-preview-title">Assista aos previews dos nossos cases</h2>
+            <p>Selecione um projeto para ver frames da direção de arte, interface e efeitos que entregamos em produção.</p>
+          </div>
+          <div class="project-preview" data-preview-group="projects-overview">
+            <figure class="project-preview__stage">
+              <img
+                src="./assets/battle-alpha-preview-1.svg"
+                alt="Concept neon do Battle Alpha com arenas flutuantes"
+                data-preview-stage
+              />
+              <figcaption data-preview-caption>Concept neon com arenas flutuantes e composição competitiva.</figcaption>
+            </figure>
+            <div class="project-preview__thumbnails" role="list">
+              <button
+                type="button"
+                class="project-preview__thumb is-active"
+                data-preview-item
+                data-preview-image="./assets/battle-alpha-preview-1.svg"
+                data-preview-alt="Concept neon do Battle Alpha com arenas flutuantes"
+                data-preview-caption="Concept neon com arenas flutuantes e composição competitiva."
+              >
+                <img src="./assets/battle-alpha-preview-1.svg" alt="Miniatura do concept do Battle Alpha" />
+              </button>
+              <button
+                type="button"
+                class="project-preview__thumb"
+                data-preview-item
+                data-preview-image="./assets/project-secret-preview-2.svg"
+                data-preview-alt="Interface mobile minimalista do Project Secret"
+                data-preview-caption="Interface mobile minimalista com sistema de escolhas ramificadas."
+              >
+                <img src="./assets/project-secret-preview-2.svg" alt="Miniatura da interface do Project Secret" />
+              </button>
+              <button
+                type="button"
+                class="project-preview__thumb"
+                data-preview-item
+                data-preview-image="./assets/nightmare-preview-3.svg"
+                data-preview-alt="Cena sombria do Nightmare com iluminação volumétrica"
+                data-preview-caption="Cena sombria do Nightmare destacando iluminação volumétrica e partículas."
+              >
+                <img src="./assets/nightmare-preview-3.svg" alt="Miniatura da cena sombria do Nightmare" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" aria-labelledby="catalogo-title">
+        <div class="container">
+          <div class="page-section__header">
+            <h2 class="page-section__title" id="catalogo-title">Jogos e plataformas em destaque</h2>
+            <p>Abra um projeto para descobrir stack tecnológica, desafios e resultados de cada lançamento.</p>
+          </div>
+          <div class="projects-grid">
+            <a class="project-card" href="projects/battle-alpha.html">
+              <img src="./assets/Battle Alpha.d713c8c9.jpg" alt="Cena de batalha futurista do jogo Battle Alpha" />
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">Console</span>
+                  <span class="project-card__tag">Multiplayer</span>
+                </div>
+                <h3>Battle Alpha</h3>
+                <p class="project-card__description">
+                  MOBA futurista com matchmaking global, HUD adaptável e ecossistema competitivo pronto para esports.
+                </p>
+              </div>
+            </a>
+            <a class="project-card" href="projects/project-secret.html">
+              <img src="./assets/PRojectSecret.38ba3f53.png" alt="Interface narrativa do Project Secret em smartphone" />
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">Mobile</span>
+                  <span class="project-card__tag">Narrativa</span>
+                </div>
+                <h3>Project Secret</h3>
+                <p class="project-card__description">
+                  Thriller episódico interativo com IA generativa, decisões ramificadas e sincronização cross-device.
+                </p>
+              </div>
+            </a>
+            <a class="project-card" href="projects/nightmare.html">
+              <img src="./assets/imgNightmare.a65da0d6.jpg" alt="Ambiente sombrio do jogo Nightmare" />
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">PC</span>
+                  <span class="project-card__tag">Horror</span>
+                </div>
+                <h3>Nightmare</h3>
+                <p class="project-card__description">
+                  Survival horror cooperativo com áudio espacial dinâmico, integração com streamers e telemetria em tempo
+                  real.
+                </p>
+              </div>
+            </a>
+            <a class="project-card" href="projects.html#eventos">
+              <img src="./assets/imghalloween.08c913db.png" alt="Evento sazonal temático de Halloween" />
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <span class="project-card__tag">Live-ops</span>
+                  <span class="project-card__tag">Eventos</span>
+                </div>
+                <h3>Eventos sazonais</h3>
+                <p class="project-card__description">
+                  Operações especiais multiplataforma com economia dinâmica, desafios semanais e assets temáticos.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section page-section--alt" id="eventos" aria-labelledby="eventos-title">
+        <div class="container">
+          <div class="page-section__header">
+            <h2 class="page-section__title" id="eventos-title">Live-ops sob medida</h2>
+            <p>
+              Temporadas temáticas, passes de batalha e campanhas de comunidade que mantêm a base engajada o ano todo.
+            </p>
+          </div>
+          <div class="page-grid">
+            <article class="page-card">
+              <div class="page-card__icon" aria-hidden="true">🎯</div>
+              <h3>Eventos temáticos</h3>
+              <p>
+                Criação de narrativas sazonais completas com assets exclusivos, desafios dinâmicos e recompensas limitadas.
+              </p>
+            </article>
+            <article class="page-card">
+              <div class="page-card__icon" aria-hidden="true">📈</div>
+              <h3>Economia balanceada</h3>
+              <p>
+                Simulações contínuas com IA garantem equilíbrio entre progressão de jogadores e metas de monetização.
+              </p>
+            </article>
+            <article class="page-card">
+              <div class="page-card__icon" aria-hidden="true">💬</div>
+              <h3>Comunicados em tempo real</h3>
+              <p>
+                Automação de mensagens in-game, email e redes sociais com segmentação avançada e personalização.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" aria-labelledby="cta-projetos-title">
+        <div class="container">
+          <div class="page-quote">
+            <h2 class="page-section__title" id="cta-projetos-title">Pronto para o próximo case?</h2>
+            <blockquote>
+              "Cada colaboração começa com um sprint estratégico. Em duas semanas entregamos protótipo jogável, roadmap e
+              plano de monetização." — Diogo Moura
+            </blockquote>
+            <div class="project-cta">
+              <a class="btn btn--primary" href="contact.html">Enviar briefing</a>
+              <a class="btn btn--ghost" href="index.html#preview">Assistir preview</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <div>
+          <p class="logo">Alpha Studio</p>
+          <p>Jogos em Unity, sistemas inteligentes e experiências digitais sob medida.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="mailto:contato@alphastudio.gg">contato@alphastudio.gg</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <p class="footer__copy">© <span id="current-year"></span> Alpha Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./assets/script.js" type="module"></script>
+  </body>
+</html>

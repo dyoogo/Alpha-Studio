@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad-night-3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad-night-3)" />
+  <g fill="#f59e0b" opacity="0.5">
+    <polygon points="240,500 360,220 480,500" />
+    <polygon points="600,500 720,220 840,500" />
+    <polygon points="960,500 1080,220 1200,500" />
+  </g>
+  <g fill="#0f172a" opacity="0.7">
+    <rect x="280" y="360" width="120" height="40" rx="12" />
+    <rect x="640" y="360" width="120" height="40" rx="12" />
+    <rect x="1000" y="360" width="120" height="40" rx="12" />
+  </g>
+  <g fill="none" stroke="#fbbf24" stroke-width="3" stroke-dasharray="16 20" opacity="0.6">
+    <path d="M280 200c80 80 160 80 240 0s160-80 240 0 160 80 240 0" />
+  </g>
+  <text x="600" y="580" text-anchor="middle" font-size="44" font-family="'Poppins', 'Segoe UI', sans-serif" fill="#fde68a" font-weight="600">Ferramentas para streamers</text>
+</svg>

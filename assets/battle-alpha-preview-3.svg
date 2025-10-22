@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad-battle-3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad-battle-3)" />
+  <g stroke="#38bdf8" stroke-width="3" stroke-opacity="0.35">
+    <path d="M120 160h960" />
+    <path d="M120 340h960" />
+    <path d="M120 520h960" />
+  </g>
+  <g fill="#0ea5e9" fill-opacity="0.8">
+    <polygon points="200,340 340,220 480,340 340,460" />
+    <polygon points="520,340 660,220 800,340 660,460" />
+    <polygon points="840,340 980,220 1120,340 980,460" />
+  </g>
+  <g fill="#38bdf8" fill-opacity="0.25">
+    <circle cx="340" cy="340" r="160" />
+    <circle cx="660" cy="340" r="160" />
+    <circle cx="980" cy="340" r="160" />
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-size="40" font-family="'Poppins', 'Segoe UI', sans-serif" fill="#e2e8f0" font-weight="600">HUD competitivo e telemetria</text>
+</svg>

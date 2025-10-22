@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fale com o Alpha Studio e com Diogo Moura para iniciar um projeto de jogo, plataforma ou consultoria."
+    />
+    <title>Contato · Alpha Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="header" id="topo">
+      <div class="container header__inner">
+        <div class="logo" aria-label="Alpha Studio">Alpha Studio</div>
+        <nav class="navigation" aria-label="Navegação principal">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list" aria-label="Abrir menu">
+            ☰
+          </button>
+          <ul id="menu-list" class="menu" aria-hidden="true">
+            <li><a href="index.html#topo">Início</a></li>
+            <li><a href="index.html#preview">Preview</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="projects.html">Projetos</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="contact.html" aria-current="page">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" type="button" aria-pressed="true" aria-label="Alternar tema">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <a class="btn btn--outline" href="contact.html">Agendar call</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-hero" aria-labelledby="contato-title">
+        <div class="container page-hero__content">
+          <div class="page-hero__text">
+            <p class="page-hero__eyebrow">Contato direto</p>
+            <h1 class="page-hero__title" id="contato-title">Vamos criar seu próximo universo</h1>
+            <p class="page-hero__lead">
+              Compartilhe objetivos, prazos e plataformas de interesse. Em até 48 horas úteis retornamos com agenda de
+              discovery e primeiros caminhos estratégicos com Diogo Moura.
+            </p>
+            <ul class="page-hero__meta">
+              <li><strong>Atendimento global</strong> em português e inglês.</li>
+              <li><strong>Respostas rápidas</strong> com estimativas iniciais e próximos passos.</li>
+              <li><strong>Parcerias longas</strong> com planos de suporte, live-ops e atualizações contínuas.</li>
+            </ul>
+            <div class="page-hero__actions">
+              <a class="btn btn--primary" href="#formulario-contato">Enviar briefing</a>
+              <a class="btn btn--ghost" href="projects.html">Ver cases</a>
+            </div>
+          </div>
+          <figure class="page-hero__media">
+            <img src="./assets/PRojectSecret.38ba3f53.png" alt="Equipe do Alpha Studio em sessão colaborativa" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="page-section" aria-labelledby="canais-title">
+        <div class="container contact-layout">
+          <div class="contact-layout__card">
+            <h2 class="page-section__title" id="canais-title">Canais diretos</h2>
+            <p>
+              Escolha o canal ideal ou envie o formulário para receber uma proposta personalizada em até 48 horas úteis.
+            </p>
+            <ul class="contact-layout__channels">
+              <li><strong>Email:</strong> contato@alphastudio.gg</li>
+              <li><strong>Telefone:</strong> +55 11 99999-9999</li>
+              <li><strong>Endereço:</strong> São Paulo · Atendimento global remoto</li>
+              <li><strong>Horários:</strong> Segunda a sexta, 9h às 19h BRT</li>
+            </ul>
+            <div class="contact-social" aria-label="Redes sociais">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+              <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+            </div>
+          </div>
+          <form class="contact__form" id="formulario-contato">
+            <label>
+              Nome completo
+              <input type="text" name="name" placeholder="Como podemos te chamar?" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="seu@email.com" required />
+            </label>
+            <label>
+              Empresa ou estúdio
+              <input type="text" name="company" placeholder="Nome da empresa" />
+            </label>
+            <label>
+              Tipo de projeto
+              <select name="project-type" required>
+                <option value="">Selecione uma opção</option>
+                <option value="game">Jogo Unity</option>
+                <option value="simulator">Simulador imersivo</option>
+                <option value="system">Sistema personalizado</option>
+                <option value="consultoria">Consultoria técnica</option>
+              </select>
+            </label>
+            <label>
+              Plataformas alvo
+              <input type="text" name="platforms" placeholder="Console, mobile, PC, XR..." />
+            </label>
+            <label>
+              Mensagem
+              <textarea name="message" rows="4" placeholder="Conte detalhes, metas e cronograma ideal"></textarea>
+            </label>
+            <button class="btn btn--primary" type="submit">Enviar mensagem</button>
+            <p class="page-hero__lead">
+              Preferimos receber NDA antes de dados sensíveis. Assinamos documentos eletrônicos em até 24 horas.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <section class="page-section page-section--alt" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="page-section__header">
+            <h2 class="page-section__title" id="faq-title">FAQ rápido</h2>
+            <p>Algumas respostas para perguntas comuns antes da nossa reunião inicial.</p>
+          </div>
+          <div class="page-grid">
+            <article class="page-card">
+              <h3>Quanto tempo leva para iniciar?</h3>
+              <p>Após o briefing, reservamos a squad em até 5 dias úteis e iniciamos o sprint de descoberta.</p>
+            </article>
+            <article class="page-card">
+              <h3>Vocês trabalham com NDA?</h3>
+              <p>Sim. Utilizamos acordos de confidencialidade bilaterais com assinatura digital e auditoria.</p>
+            </article>
+            <article class="page-card">
+              <h3>Qual é o modelo de parceria?</h3>
+              <p>Oferecemos formatos de fee mensal, revenue share e pacotes híbridos conforme o perfil do projeto.</p>
+            </article>
+            <article class="page-card">
+              <h3>Existe suporte pós-lançamento?</h3>
+              <p>Sim, contamos com planos de live-ops, monitoramento 24/7 e roadmap trimestral de atualizações.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <div>
+          <p class="logo">Alpha Studio</p>
+          <p>Jogos em Unity, sistemas inteligentes e experiências digitais sob medida.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#topo">Voltar ao topo</a>
+          <a href="mailto:contato@alphastudio.gg">contato@alphastudio.gg</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <p class="footer__copy">© <span id="current-year"></span> Alpha Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./assets/script.js" type="module"></script>
+  </body>
+</html>

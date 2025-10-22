@@ -16,6 +16,7 @@
   --radius-sm: 0.75rem;
   --transition-fast: 0.25s ease;
   --transition-slow: 0.6s ease;
+  --container-max: 1200px;
 }
 
 * {
@@ -37,6 +38,7 @@ body {
   color: var(--color-text);
   min-height: 100vh;
   overflow-x: hidden;
+  font-size: clamp(0.95rem, 0.88rem + 0.3vw, 1.05rem);
 }
 
 h1,
@@ -88,7 +90,7 @@ img {
 }
 
 .container {
-  width: min(1200px, 92vw);
+  width: min(var(--container-max), 92vw);
   margin: 0 auto;
 }
 
@@ -224,6 +226,14 @@ img {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.nav-toggle:focus-visible,
+.nav-toggle:hover {
+  background: rgba(248, 195, 0, 0.12);
+  border-color: rgba(248, 195, 0, 0.4);
+  color: var(--color-accent);
 }
 
 .nav-list {
@@ -259,6 +269,14 @@ img {
 .nav-list a:focus-visible::after,
 .nav-list a:hover::after {
   transform: scaleX(1);
+}
+
+.nav-backdrop {
+  display: none;
+}
+
+body.is-nav-open {
+  overflow: hidden;
 }
 
 .hero {
@@ -792,30 +810,69 @@ img {
 }
 
 @media (max-width: 960px) {
-  .primary-nav {
-    position: fixed;
-    inset: 0;
-    background: rgba(4, 4, 4, 0.96);
-    backdrop-filter: blur(16px);
-    padding: 6rem 2rem 2rem;
-    transform: translateY(-100%);
-    transition: transform var(--transition-fast);
-    flex-direction: column;
-    align-items: flex-start;
+  .header__inner {
+    gap: 1rem;
   }
 
-  .primary-nav.is-open {
-    transform: translateY(0);
+  .primary-nav {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 1rem;
   }
 
   .nav-toggle {
     display: inline-flex;
+    position: relative;
+    z-index: 140;
+  }
+
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 4, 4, 0.82);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+    z-index: 120;
+  }
+
+  .primary-nav.is-open .nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-list {
+    position: fixed;
+    inset: 0;
+    display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 1.25rem;
+    padding: 6rem 2rem 2.5rem;
+    background: rgba(4, 4, 4, 0.96);
+    backdrop-filter: blur(16px);
+    transform: translateY(-100%);
+    transition: transform var(--transition-fast);
     font-size: 1.1rem;
+    overflow-y: auto;
+    pointer-events: none;
+    z-index: 130;
+  }
+
+  .nav-list li,
+  .nav-list a {
+    width: 100%;
+  }
+
+  .nav-list a {
+    padding: 0.35rem 0;
+  }
+
+  .primary-nav.is-open .nav-list {
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .header__cta {
@@ -824,6 +881,14 @@ img {
 }
 
 @media (max-width: 640px) {
+  .header__inner {
+    align-items: flex-start;
+  }
+
+  .brand {
+    font-size: 1.65rem;
+  }
+
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
@@ -835,6 +900,115 @@ img {
 
   .spotlight {
     padding: 1.25rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .contact__form,
+  .community__form {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    width: min(100%, 92vw);
+  }
+
+  .hero {
+    padding: 4.5rem 0 3.5rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.6rem, 11vw, 3.1rem);
+  }
+
+  .hero__description {
+    font-size: 0.95rem;
+  }
+
+  .nav-list {
+    padding: 5.5rem 1.5rem 2rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .experience-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --container-max: 1400px;
+  }
+
+  .hero {
+    padding: clamp(7rem, 11vw, 12rem) 0;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+  }
+
+  .section {
+    padding: clamp(5rem, 9vw, 7rem) 0;
+  }
+
+  .releases__grid,
+  .studios__grid,
+  .news__grid {
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --container-max: 1640px;
+  }
+
+  body {
+    font-size: 1.08rem;
+  }
+
+  .hero__title {
+    font-size: clamp(4.2rem, 4vw, 5.2rem);
+  }
+
+  .hero__description {
+    font-size: 1.1rem;
+  }
+
+  .nav-list {
+    gap: 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --container-max: 1840px;
+  }
+
+  body {
+    font-size: 1.12rem;
+  }
+
+  .hero {
+    padding: 12rem 0 9rem;
+  }
+
+  .hero__grid {
+    gap: 5rem;
   }
 }
 

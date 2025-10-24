@@ -185,7 +185,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6rem 0;
+  padding: 0.3rem 0;
   gap: 1.5rem;
 }
 
@@ -203,12 +203,6 @@ img {
   width: auto;        /* mantém a proporção */
   display: block;
   transition: all 0.3s ease;
-}
-
-/* se quiser que ela reduza ao rolar a página */
-.site-header.is-condensed .brand img {
-  height: 56px;       /* tamanho menor quando o usuário rola */
-  transform: scale(0.97);
 }
 
 .brand__mark {
@@ -904,7 +898,7 @@ body.is-nav-open {
   }
 
   .hero__poster img {
-    aspect-ratio: auto;
+    aspect-ratio: 16 / 9;
   }
 
   .spotlight {

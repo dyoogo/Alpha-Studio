@@ -32,8 +32,8 @@ body {
 
 body {
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at 20% 20%, rgba(248, 195, 0, 0.08), transparent 55%),
-    radial-gradient(circle at 80% 10%, rgba(255, 79, 51, 0.08), transparent 60%),
+  background: radial-gradient(circle at 20% 20%, #8000f814, transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(83, 1, 249, 0.08), transparent 60%),
     var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
@@ -185,7 +185,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0.6rem 0;
   gap: 1.5rem;
 }
 
@@ -197,6 +197,18 @@ img {
   align-items: center;
   gap: 0.6rem;
   text-transform: uppercase;
+}
+.brand img {
+  height: 72px;       /* aumenta o tamanho da logo */
+  width: auto;        /* mantém a proporção */
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* se quiser que ela reduza ao rolar a página */
+.site-header.is-condensed .brand img {
+  height: 56px;       /* tamanho menor quando o usuário rola */
+  transform: scale(0.97);
 }
 
 .brand__mark {
@@ -290,19 +302,18 @@ body.is-nav-open {
   inset: 0;
   z-index: -2;
   background: linear-gradient(135deg, rgba(4, 4, 4, 0.4), rgba(4, 4, 4, 0.9)),
-    url('../assets/alphagamer.d90accaf.jpeg') center/cover no-repeat;
+    url('../assets/bk-Plack.png') center/cover no-repeat;
   filter: saturate(1.1);
 }
-
 .hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(circle at 20% 50%, rgba(248, 195, 0, 0.18), transparent 55%),
-    radial-gradient(circle at 80% 20%, rgba(255, 79, 51, 0.22), transparent 60%);
-  mix-blend-mode: screen;
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 50%, rgba(108, 0, 248, 0.488), transparent 55%), radial-gradient(circle at 80% 20%, rgba(130, 4, 255, 0.22), transparent 80%);
+  
 }
+
 
 .hero__grid {
   display: grid;
@@ -357,14 +368,14 @@ body.is-nav-open {
 
 .hero__poster {
   margin: 0;
-  border-radius: var(--radius-lg);
+ 
   overflow: hidden;
   position: relative;
-  box-shadow: var(--shadow-strong);
+ 
 }
 
 .hero__poster img {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: auto;
   object-fit: cover;
 }
 
@@ -569,13 +580,11 @@ body.is-nav-open {
 
 .experiences__media {
   margin: 0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-strong);
+  overflow: hidden; 
 }
 
 .experiences__media img {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 12 / 12;
   object-fit: cover;
 }
 
@@ -583,7 +592,7 @@ body.is-nav-open {
   padding: 1rem 1.25rem;
   background: rgba(4, 4, 4, 0.9);
   font-size: 0.9rem;
-  border-top: 1px solid rgba(248, 195, 0, 0.16);
+  border-top: 1px solid rgba(207, 207, 207, 0.16);
 }
 
 .studios__grid {
@@ -659,7 +668,7 @@ body.is-nav-open {
 }
 
 .studio__media img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 6;
   object-fit: cover;
 }
 
@@ -895,7 +904,7 @@ body.is-nav-open {
   }
 
   .hero__poster img {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
   }
 
   .spotlight {

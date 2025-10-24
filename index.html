@@ -35,17 +35,31 @@
         </a>
         <nav class="primary-nav" aria-label="Navegação principal">
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-            Menu
+            <span class="nav-toggle__icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="nav-toggle__label" data-nav-toggle-label>Menu</span>
           </button>
           <div class="nav-backdrop" aria-hidden="true"></div>
-          <ul id="menu-principal" class="nav-list" aria-hidden="true">
-            <li><a href="#lancamentos">Lançamentos</a></li>
-            <li><a href="#universos">Universos</a></li>
-            <li><a href="#experiencias">Experiências</a></li>
-            <li><a href="#noticias">Atualizações</a></li>
-            <li><a href="#estudio">Estúdio</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
+          <div id="menu-principal" class="nav-panel" aria-hidden="true" data-nav-panel>
+            <ul class="nav-list">
+              <li><a href="#lancamentos">Lançamentos</a></li>
+              <li><a href="#universos">Universos</a></li>
+              <li><a href="#experiencias">Experiências</a></li>
+              <li><a href="#noticias">Atualizações</a></li>
+              <li><a href="#estudio">Estúdio</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="nav-panel__footer">
+              <a class="btn btn--accent nav-panel__cta" href="#contato">Agendar call</a>
+              <p class="nav-panel__meta">
+                <span>Alpha Studio</span>
+                <span>alphastudio.ofc@gmail.com</span>
+              </p>
+            </div>
+          </div>
         </nav>
         <div class="header__cta">
           <a class="btn btn--outline" href="#contato">Agendar call</a>

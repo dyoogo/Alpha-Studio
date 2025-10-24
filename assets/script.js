@@ -1,9 +1,11 @@
 const header = document.querySelector('.site-header');
 const nav = document.querySelector('.primary-nav');
 const navToggle = document.querySelector('.nav-toggle');
+const navPanel = document.querySelector('[data-nav-panel]');
 const navList = document.querySelector('.nav-list');
 const navBackdrop = document.querySelector('.nav-backdrop');
 const pageBody = document.body;
+const navToggleLabel = navToggle?.querySelector('[data-nav-toggle-label]');
 const currentYearSpan = document.querySelector('[data-current-year]');
 const contactForm = document.querySelector('[data-contact-form]');
 const contactFeedback = document.querySelector('[data-contact-feedback]');
@@ -18,35 +20,45 @@ if (navBackdrop) {
 }
 
 function setNavState(isOpen) {
-  if (!nav || !navToggle || !navList) return;
+  if (!nav || !navToggle) return;
 
   nav.classList.toggle('is-open', isOpen);
   navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.classList.toggle('is-active', isOpen);
 
-  const shouldHideList = !desktopNav.matches && !isOpen;
-  navList.setAttribute('aria-hidden', String(shouldHideList));
+  if (navToggleLabel) {
+    navToggleLabel.textContent = isOpen ? 'Fechar' : 'Menu';
+  }
+
+  const shouldHidePanel = !desktopNav.matches && !isOpen;
+  navPanel?.setAttribute('aria-hidden', String(shouldHidePanel));
+  navList?.setAttribute('aria-hidden', String(shouldHidePanel));
+
+  if (!desktopNav.matches) {
+    navPanel?.classList.toggle('is-visible', isOpen);
+    pageBody?.classList.toggle('is-nav-open', isOpen);
+  } else {
+    navPanel?.classList.remove('is-visible');
+    navPanel?.setAttribute('aria-hidden', 'false');
+    navList?.setAttribute('aria-hidden', 'false');
+    pageBody?.classList.remove('is-nav-open');
+  }
 
   const shouldHideBackdrop = !isOpen || desktopNav.matches;
   navBackdrop?.setAttribute('aria-hidden', String(shouldHideBackdrop));
-
-  if (!desktopNav.matches) {
-    pageBody?.classList.toggle('is-nav-open', isOpen);
-  } else {
-    pageBody?.classList.remove('is-nav-open');
-  }
 }
 
 function openNav() {
-  if (!nav || !navToggle || !navList) return;
+  if (!nav || !navToggle) return;
   if (desktopNav.matches) return;
 
   setNavState(true);
-  const firstLink = navList.querySelector('a');
+  const firstLink = navPanel?.querySelector('a') ?? navList?.querySelector('a');
   firstLink?.focus({ preventScroll: true });
 }
 
 function closeNav({ returnFocus = false } = {}) {
-  if (!nav || !navToggle || !navList) return;
+  if (!nav || !navToggle) return;
   if (!nav.classList.contains('is-open')) return;
 
   setNavState(false);
@@ -62,13 +74,17 @@ function setHeaderState() {
 }
 
 function syncNav(mediaQuery) {
-  if (!nav || !navToggle || !navList) return;
+  if (!nav || !navToggle) return;
   if (mediaQuery.matches) {
     nav.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
-    navList.setAttribute('aria-hidden', 'false');
+    navToggle.classList.remove('is-active');
+    navToggleLabel && (navToggleLabel.textContent = 'Menu');
+    navList?.setAttribute('aria-hidden', 'false');
+    navPanel?.setAttribute('aria-hidden', 'false');
     navBackdrop?.setAttribute('aria-hidden', 'true');
     pageBody?.classList.remove('is-nav-open');
+    navPanel?.classList.remove('is-visible');
   } else {
     setNavState(nav.classList.contains('is-open'));
   }
@@ -93,9 +109,10 @@ if (navToggle && nav) {
   });
 }
 
-if (navList && navToggle) {
-  navList.addEventListener('click', (event) => {
-    if (!(event.target instanceof HTMLAnchorElement)) return;
+if (navPanel && navToggle) {
+  navPanel.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLAnchorElement)) return;
     if (!desktopNav.matches) {
       closeNav();
     }

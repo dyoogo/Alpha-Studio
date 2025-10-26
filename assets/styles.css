@@ -387,7 +387,7 @@ body.is-nav-open {
 .hero__description {
   margin: 1.5rem 0 2rem;
   max-width: 36rem;
-  color: var(--color-text-muted);
+  color: #f3a406;
 }
 
 .hero__highlights {
@@ -589,7 +589,6 @@ body.is-nav-open {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(248, 195, 0, 0.2), transparent 65%);
   z-index: -1;
 }
 

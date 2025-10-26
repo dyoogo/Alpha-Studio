@@ -387,7 +387,7 @@ body.is-nav-open {
 .hero__description {
   margin: 1.5rem 0 2rem;
   max-width: 36rem;
-  color: #f3a406;
+  color: #f3a406; 
 }
 
 .hero__highlights {
